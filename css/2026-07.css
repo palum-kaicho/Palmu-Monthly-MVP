@@ -1,0 +1,256 @@
+/* ==========================================================================
+   7月真夏仕様：青空＆ひまわり舞い散る爽やかサマーCSS
+   ========================================================================== */
+
+body {
+    margin: 0;
+    font-family: "Zen Maru Gothic", sans-serif;
+    /* 真夏の眩しい青空グラデーション */
+    background: linear-gradient(180deg, #1b82db 0%, #52b1ff 45%, #9be1ff 80%, #e0f5ff 100%);
+    background-attachment: fixed;
+    color: #1e3a5f;
+    overflow-x: hidden;
+}
+
+#himawari-canvas {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* ぽっかり浮かぶ夏雲（背景） */
+.sky-cloud {
+    position: fixed;
+    background: rgba(255, 255, 255, 0.45);
+    border-radius: 100px;
+    pointer-events: none;
+    z-index: 1;
+    filter: blur(10px);
+}
+
+.cloud-1 {
+    width: 300px;
+    height: 100px;
+    top: 10%;
+    left: -50px;
+    animation: floatCloud 25s infinite linear;
+}
+
+.cloud-2 {
+    width: 450px;
+    height: 140px;
+    top: 35%;
+    right: -100px;
+    animation: floatCloudReverse 35s infinite linear;
+}
+
+@keyframes floatCloud {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(110vw); }
+}
+
+@keyframes floatCloudReverse {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-110vw); }
+}
+
+.wrapper {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 60px 18px;
+    position: relative;
+    z-index: 10;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.v3-badge {
+    display: inline-block;
+    padding: 6px 20px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: #e65100;
+    background: #fff;
+    border-radius: 30px;
+    margin-bottom: 18px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.header h1 {
+    font-family: "Montserrat", "Zen Maru Gothic", sans-serif;
+    font-size: 30px;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 3px;
+    margin: 0;
+    text-shadow: 0 4px 12px rgba(12, 60, 110, 0.35);
+}
+
+.header .subtitle {
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 5px;
+    color: #ffe082;
+    margin-top: 12px;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.story {
+    margin: 36px 0;
+    padding: 32px 28px;
+    /* 白のガラスモーフィズムで可読性最高に */
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 15px 35px rgba(10, 60, 120, 0.12);
+    white-space: pre-wrap;
+    line-height: 2.3;
+    font-size: 15.5px;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    color: #1a365d;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
+.identity-call {
+    background: rgba(255, 248, 225, 0.92);
+    border: 2px solid #ffe082;
+    text-align: center;
+}
+
+/* クライマックスの画像枠 */
+.end {
+    margin-top: 90px;
+    text-align: center;
+}
+
+.end-image-wrap {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 4px solid #ffffff;
+    box-shadow: 0 20px 40px rgba(10, 50, 100, 0.25);
+    transition: transform 0.4s ease;
+}
+
+.end-image-wrap:hover {
+    transform: scale(1.03);
+}
+
+.end-image-wrap img {
+    width: 100%;
+    display: block;
+    height: auto;
+}
+
+.end-text {
+    margin-top: 45px;
+    font-size: 16px;
+    line-height: 2.4;
+    font-weight: 700;
+    color: #0d2b45;
+}
+
+/* アクセントカラー */
+.sun-glow {
+    color: #d84315;
+    font-weight: 900;
+    font-size: 18px;
+    background: linear-gradient(transparent 65%, #ffe082 65%);
+}
+
+.vivid-orange {
+    color: #e65100;
+    font-weight: 900;
+    font-size: 18px;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* フッター */
+.exclusive-footer {
+    margin-top: 120px;
+    padding-top: 40px;
+    padding-bottom: 60px;
+    text-align: center;
+}
+
+.footer-sun-line {
+    width: 80px;
+    height: 3px;
+    margin: 0 auto 40px auto;
+    background: #ffb300;
+    border-radius: 2px;
+}
+
+.footer-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 6px;
+    margin: 0 0 15px 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.footer-main {
+    font-size: 38px;
+    font-weight: 900;
+    color: #0d2b45;
+    margin: 0 0 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-main .prefix {
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #1e88e5;
+    margin-right: 10px;
+    font-style: italic;
+}
+
+.footer-main .dynamic-name {
+    color: #e65100;
+    text-shadow: 0 2px 10px rgba(255, 179, 0, 0.4);
+}
+
+.footer-sign {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #1565c0;
+    letter-spacing: 2px;
+    margin: 0 0 6px 0;
+}
+
+.footer-date {
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    color: #546e7a;
+    letter-spacing: 3px;
+    margin: 0;
+}

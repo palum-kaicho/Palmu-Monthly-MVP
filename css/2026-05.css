@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght=200;400;700&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#050505;
+  color:#f6f1e7;
+  font-family:'Noto Serif JP',serif;
+  overflow-x:hidden;
+  /* ★行間を 2.2 から 1.6 に狭めて見やすく調整 */
+  line-height:1.6;
+  letter-spacing:.04em;
+}
+
+canvas{
+  position:fixed;
+  inset:0;
+  z-index:-3;
+}
+
+.overlay{
+  position:fixed;
+  inset:0;
+  background:
+  radial-gradient(circle at center,
+  transparent 0%,
+  rgba(0,0,0,.45) 70%,
+  rgba(0,0,0,.85) 100%);
+  pointer-events:none;
+  z-index:-2;
+}
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  padding:0 8vw;
+}
+
+.hero-inner{
+  text-align:center;
+}
+
+.popup{
+  position:absolute;
+  top:80px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:18px;
+  padding:16px 24px;
+  backdrop-filter:blur(12px);
+  opacity:0;
+  transform:translateY(-20px);
+  animation:popup 4s forwards;
+}
+
+.dot{
+  width:10px;
+  height:10px;
+  background:#ffe28a;
+  border-radius:50%;
+  display:inline-block;
+  margin-right:10px;
+}
+
+@keyframes popup{
+  0%{
+    opacity:0;
+    transform:translateY(-20px);
+  }
+  15%{
+    opacity:1;
+    transform:translateY(0);
+  }
+  85%{
+    opacity:1;
+    transform:translateY(0);
+  }
+  100%{
+    opacity:0;
+    transform:translateY(0);
+  }
+}
+
+h1{
+  font-size:clamp(3rem,10vw,7rem);
+
+  background:linear-gradient(
+  90deg,
+  #8a6a2a,
+  #fff1b3,
+  #b68a35,
+  #fff1b3,
+  #8a6a2a
+  );
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+  margin-bottom:20px;
+}
+
+.subtitle{
+  opacity:.7;
+  font-size:1rem;
+  letter-spacing:4px;
+}
+
+.section{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:16vh 8vw;
+}
+
+.text-block{
+  max-width:860px;
+}
+
+/* ★文章ごとの間隔が詰まりすぎないよう、段落の下に少し余白を追加 */
+.text-block p{
+  font-size:clamp(1.1rem,3vw,2rem);
+  margin-bottom:1.5rem; 
+}
+.text-block p:last-child {
+  margin-bottom: 0;
+}
+
+.big{
+  font-size:clamp(1.8rem,5vw,4rem);
+  line-height:1.4;
+}
+
+.image-section{
+  padding-top:0;
+}
+
+.main-image{
+  width:min(88vw,700px);
+  border-radius:26px;
+  opacity:.94;
+}
+
+.dark{
+  background:#000;
+}
+
+.return-section{
+  background:#000;
+}
+
+.climax{
+  position:relative;
+  opacity:1;
+  transform:none;
+  animation:none;
+  font-size:clamp(1rem,3vw,1.5rem);
+}
+
+.center{
+  text-align:center;
+}
+
+.ending{
+  min-height:100vh;
+  background:#000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:0 8vw;
+}
+
+.ending-text{
+  max-width:900px;
+  text-align:center;
+}
+
+.ending-text p{
+  font-size:clamp(1.4rem,4vw,3rem);
+}
+
+footer{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:0 8vw;
+}
+
+footer h2{
+  font-size:clamp(3rem,8vw,5rem);
+  margin-bottom:20px;
+}
+
+footer h3{
+  margin-top:20px;
+  font-size:clamp(2rem,5vw,3rem);
+}
+
+.reveal{
+  opacity:0;
+  transform:translateY(30px);
+  transition:2s ease;
+}
+
+.reveal.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ★最後の「からあげ棒」用の美しい虹色グラデーション */
+.rainbow-text {
+  background: linear-gradient(
+    linear,
+    left top,
+    right top,
+    from(#ff3366),
+    to(#ff9933),
+    to(#33ccff),
+    to(#9933ff),
+    to(#ff3366)
+  );
+  background: linear-gradient(
+    90deg,
+    #ff3366,
+    #ff9933,
+    #33ccff,
+    #9933ff,
+    #ff3366
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: rainbowMove 6s linear infinite; /* ゆるやかに虹色が動くで */
+}
+
+@keyframes rainbowMove {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+@media(max-width:768px){
+  .popup{
+    width:90%;
+    left:5%;
+    text-align:center;
+  }
+}

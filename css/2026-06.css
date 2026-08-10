@@ -1,0 +1,260 @@
+/* ==========================================================================
+   新コンセプト：夏・花火・涼感 プレミアムカスタムCSS（画像最適化版）
+   ========================================================================== */
+
+body {
+    margin: 0;
+    font-family: "Noto Serif JP", serif;
+    background: radial-gradient(circle at center, #0a1128 0%, #02040a 100%);
+    color: #fff;
+    overflow-x: hidden;
+}
+
+#fireworks {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.wrapper {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 60px 18px;
+    position: relative;
+    z-index: 10;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.header h1 {
+    font-family: "Montserrat", "Noto Serif JP", serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 4px;
+    text-shadow: 
+        0 0 10px #00f0ff,
+        0 0 20px #b967ff,
+        0 0 40px rgba(0, 240, 255, 0.4);
+}
+
+.story {
+    margin: 40px 0;
+    padding: 30px 28px;
+    background: rgba(5, 10, 25, 0.65);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 16px;
+    border: 1px solid rgba(0, 240, 255, 0.15);
+    box-shadow: 
+        0 20px 50px rgba(0, 0, 0, 0.6),
+        inset 0 0 20px rgba(0, 240, 255, 0.03);
+    white-space: pre-wrap;
+    line-height: 2.3;
+    font-size: 15px;
+    letter-spacing: 0.09em;
+    font-weight: 400;
+}
+
+/* スクショ画像用デザイン（スマートフォンの画面比率に最適化） */
+.card {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+    margin: 45px auto;
+    max-width: 400px; /* 縦長スクショが間延びしないベストサイズ */
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: #00f0ff;
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.7),
+        0 0 25px rgba(0, 240, 255, 0.3);
+}
+
+.card img {
+    width: 100%;
+    display: block;
+    height: auto;
+}
+
+/* クライマックスのロック画面画像用コンテナ */
+.end {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.end-image-wrap {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid rgba(185, 103, 255, 0.3);
+    box-shadow: 
+        0 0 40px rgba(185, 103, 255, 0.25),
+        0 20px 60px rgba(0, 0, 0, 0.8);
+    transition: transform 0.5s ease;
+}
+
+.end-image-wrap:hover {
+    transform: scale(1.02);
+    border-color: #b967ff;
+    box-shadow: 0 0 50px rgba(185, 103, 255, 0.5);
+}
+
+.end-image-wrap img {
+    width: 100%;
+    display: block;
+    height: auto;
+}
+
+.end-text {
+    margin-top: 50px;
+    font-size: 15px;
+    line-height: 2.5;
+    letter-spacing: 0.08em;
+}
+
+.glow {
+    color: #fff;
+    font-weight: 700;
+    font-size: 20px;
+    text-shadow: 
+        0 0 10px #00f0ff,
+        0 0 25px #b967ff;
+}
+
+.vague-glow {
+    color: #fff;
+    font-weight: 700;
+    text-shadow: 0 0 8px rgba(0, 240, 255, 0.5);
+    animation: coolPulse 4s infinite ease-in-out;
+}
+
+@keyframes coolPulse {
+    0%, 100% { text-shadow: 0 0 8px rgba(0, 240, 255, 0.5); opacity: 0.9; }
+    50% { text-shadow: 0 0 15px #00f0ff, 0 0 25px #b967ff; opacity: 1; }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1.4s cubic-bezier(0.215, 0.610, 0.355, 1), transform 1.4s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   からあげちゃん専用：涼夏ネオンリフレクション・フッターCSS
+   ========================================================================== */
+
+.exclusive-footer {
+    margin-top: 140px;
+    padding-top: 40px;
+    padding-bottom: 60px;
+    text-align: center;
+    position: relative;
+}
+
+/* 水面に映る花火の光のような、涼しげなグラデーションライン */
+.footer-neon-line {
+    width: 60px;
+    height: 2px;
+    margin: 0 auto 50px auto;
+    background: linear-gradient(90deg, transparent, #00f0ff, #b967ff, transparent);
+    box-shadow: 0 0 10px #00f0ff;
+}
+
+.footer-wrap {
+    display: inline-block;
+}
+
+/* 控えめで洗練された大人のフォント感 */
+.footer-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: #8a99ad;
+    letter-spacing: 8px;
+    margin: 0 0 20px 0;
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+
+/* 「からあげちゃん」の名前を極上のアクアネオンで包む */
+.footer-main {
+    font-size: 38px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #fff;
+    margin: 0 0 25px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 名前の前につけるスタイリッシュなアクセント */
+.footer-main .prefix {
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: #00f0ff;
+    margin-right: 12px;
+    font-style: italic;
+    text-shadow: 0 0 8px rgba(0, 240, 255, 0.6);
+}
+
+/* 線香花火のように優しく揺らめく文字発光 */
+.footer-main .dynamic-name {
+    text-shadow: 
+        0 0 12px #00f0ff,
+        0 0 25px rgba(185, 103, 255, 0.5);
+    animation: fireworkGlow 4s infinite ease-in-out;
+}
+
+.footer-sign {
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #fff;
+    letter-spacing: 3px;
+    margin: 0 0 8px 0;
+    opacity: 0.9;
+}
+
+.footer-date {
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    color: #52637a;
+    letter-spacing: 4px;
+    margin: 0;
+}
+
+/* 静かに息をするように明滅する新アニメーション */
+@keyframes fireworkGlow {
+    0%, 100% {
+        text-shadow: 0 0 10px #00f0ff, 0 0 20px rgba(185, 103, 255, 0.4);
+        transform: scale(1);
+    }
+    50% {
+        text-shadow: 0 0 18px #00f0ff, 0 0 35px #b967ff;
+        transform: scale(1.02);
+    }
+}
+
+@keyframes shineFlow {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}

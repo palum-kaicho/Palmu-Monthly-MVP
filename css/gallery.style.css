@@ -1,0 +1,188 @@
+/* ==========================================================================
+   ギャラリーページ専用CSS (css/gallery.style.css)
+   ========================================================================== */
+
+body {
+    margin: 0;
+    font-family: "Zen Maru Gothic", sans-serif;
+    background: linear-gradient(180deg, #1b82db 0%, #52b1ff 45%, #9be1ff 80%, #e0f5ff 100%);
+    background-attachment: fixed;
+    color: #1e3a5f;
+    min-height: 100vh;
+}
+
+.wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+/* ヘッダー */
+.header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.v3-badge {
+    display: inline-block;
+    padding: 6px 20px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: #e65100;
+    background: #fff;
+    border-radius: 30px;
+    margin-bottom: 18px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.header h1 {
+    font-family: "Montserrat", "Zen Maru Gothic", sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 2px;
+    margin: 0;
+    text-shadow: 0 4px 12px rgba(12, 60, 110, 0.35);
+}
+
+.header .subtitle {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #ffe082;
+    margin-top: 12px;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* グリッドレイアウト */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* カードデザイン */
+.card {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 15px 35px rgba(10, 60, 120, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(10, 60, 120, 0.22);
+}
+
+.card-image {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    background: #e0f2fe;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+/* ダミー画像用 */
+.placeholder-img {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 900;
+    font-size: 24px;
+    color: #90caf9;
+    background: #e3f2fd;
+}
+
+.month-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(13, 43, 69, 0.8);
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+}
+
+.card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.tag {
+    font-family: "Montserrat", sans-serif;
+    font-size: 11px;
+    font-weight: 900;
+    color: #e65100;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+.card-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a365d;
+    margin: 0 0 8px 0;
+    line-height: 1.4;
+}
+
+.card-desc {
+    font-size: 12px;
+    color: #546e7a;
+    margin: 0 0 16px 0;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+.btn-view {
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    color: #1565c0;
+    margin-top: auto;
+}
+
+/* フッター */
+.footer {
+    margin-top: 80px;
+    text-align: center;
+}
+
+.footer-sign {
+    font-family: "Montserrat", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
