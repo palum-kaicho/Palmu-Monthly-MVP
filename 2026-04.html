@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>April's Monthly MVP｜あやの</title>
+
+<!-- Google Fonts 読み込み：明朝体と美しい欧文フォント -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;800;900&family=Noto+Serif+JP:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+/* ==========================================================================
+   地雷ファンタジー・儚さバブル特化型 最終確定版カスタムCSS
+   ========================================================================== */
+body {
+    margin: 0;
+    font-family: "Noto Serif JP", serif;
+    background: radial-gradient(circle at top, #1a1a3a, #05050a);
+    color: #fff;
+    overflow-x: hidden;
+}
+
+.wrapper {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 50px 18px;
+    position: relative;
+    z-index: 10;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.header h1 {
+    font-family: "Montserrat", "Noto Serif JP", serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 2px;
+    text-shadow: 
+        0 0 10px #ff4fd8,
+        0 0 20px #b967ff,
+        0 0 40px rgba(255, 79, 216, 0.5);
+}
+
+/* 原文（極上明朝体 ＆ 絶妙な文字間隔でエモさ限界突破） */
+.story {
+    margin: 32px 0;
+    padding: 26px;
+    background: rgba(12, 8, 20, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 16px;
+    border: 1px solid rgba(185, 103, 255, 0.3);
+    box-shadow: 
+        0 20px 45px rgba(0, 0, 0, 0.8),
+        inset 0 0 25px rgba(185, 103, 255, 0.1);
+    white-space: pre-wrap;
+    line-height: 2.2;
+    font-size: 15px;
+    letter-spacing: 0.08em;
+    font-weight: 300;
+}
+
+/* 画像カード（ホバーで神ネオンがさらにブーストする演出） */
+.card {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 79, 216, 0.25);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    margin: 32px 0;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.01);
+    border-color: #ff4fd8;
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.8),
+        0 0 30px rgba(255, 79, 216, 0.4);
+}
+
+.card img {
+    width: 100%;
+    display: block;
+}
+
+/* 特典ロック画面（最後） */
+.end {
+    margin-top: 80px;
+    text-align: center;
+}
+
+.end img {
+    width: 100%;
+    max-width: 500px; /* 縦長スマホ壁紙を綺麗に見せるための最適幅 */
+    margin: 0 auto;
+    border-radius: 18px;
+    border: 1px solid rgba(185, 103, 255, 0.35);
+    box-shadow: 0 0 60px rgba(255, 79, 216, 0.4);
+    display: block;
+}
+
+.end-text {
+    margin-top: 35px;
+    font-size: 15px;
+    line-height: 2.4;
+    opacity: 0.95;
+    letter-spacing: 0.08em;
+    font-weight: 300;
+}
+
+.glow {
+    color: #fff;
+    font-weight: 700;
+    font-size: 19px;
+    text-shadow: 
+        0 0 10px #ff4fd8,
+        0 0 20px #b967ff,
+        0 0 30px #ff4fd8;
+}
+
+/* スクロールフェードイン用 */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1.6s cubic-bezier(0.215, 0.610, 0.355, 1), transform 1.6s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 夜に明滅するネオン強調 */
+.vague-glow {
+    color: #fff;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    text-shadow: 
+        0 0 4px rgba(255, 79, 216, 0.6),
+        0 0 12px rgba(255, 79, 216, 0.3);
+    animation: vaguePulse 4s infinite ease-in-out;
+}
+
+@keyframes vaguePulse {
+    0%, 100% {
+        text-shadow: 
+            0 0 4px rgba(255, 79, 216, 0.6),
+            0 0 12px rgba(255, 79, 216, 0.3);
+        opacity: 0.9;
+    }
+    50% {
+        text-shadow: 
+            0 0 8px #ff4fd8,
+            0 0 20px #b967ff,
+            0 0 30px rgba(255, 79, 216, 0.8);
+        opacity: 1;
+    }
+}
+
+/* フッターデザイン */
+footer {
+    margin-top: 100px;
+    padding: 60px 0 40px 0;
+    text-align: center;
+    border-top: 1px solid rgba(255, 79, 216, 0.15);
+    position: relative;
+    z-index: 10;
+}
+
+.footer-mvp {
+    font-family: "Montserrat", sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    background: linear-gradient(90deg, #ff4fd8, #b967ff, #00f0ff, #ff4fd8);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shineFlow 4s linear infinite;
+    text-shadow: 0 0 20px rgba(255, 79, 216, 0.3);
+}
+
+.footer-ayano {
+    font-size: 38px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #fff;
+    margin: 15px 0;
+    text-shadow: 
+        0 0 10px #ff4fd8,
+        0 0 20px #b967ff,
+        0 0 40px rgba(255, 79, 216, 0.6);
+}
+
+.footer-sub {
+    font-family: "Montserrat", sans-serif;
+    font-size: 13px;
+    color: #a0a0b0;
+    letter-spacing: 3px;
+    opacity: 0.6;
+    margin: 4px 0;
+    font-weight: 400;
+}
+
+@keyframes shineFlow {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <div class="header">
+        <h1>April's Monthly MVP｜あやの</h1>
+    </div>
+
+    <div class="story">あやのは、僕が D帯の時からずっと応援してくれてる
+最古参リスナーです。
+基本 ROMでほんとに楽しんでくれてるのか
+不安になるときもあったけど
+いままでいろんな配信者を応援してきたあやのに
+<span class="vague-glow">最高の配信者って言てもらえて本当にうれしかった。</span></div>
+
+    <!-- 1枚目：上しかないだろ / 何言ってんの -->
+    <div class="card">
+        <img src="../images/tweet04.png" alt="MVPツイート画像01">
+    </div>
+
+    <div class="story">パフォーマンスがしきい値を下回る事が多々あって
+そのタイミングでトプリスがイケカテに流れて
+正直 Palmu では、異性リスナーの性癖を刺激して
+二次元の想像で美化されるラジオ配信が
+一番ニーズに合ってるんじゃないかって迷走した時期があった
+それでラジオの二部配信を導入したり
+試行錯誤のフェーズだった。</div>
+
+    <!-- 2枚目：かいちょ枠しか勝たん -->
+    <div class="card">
+        <img src="../images/tweet01.png" alt="MVPツイート画像02">
+    </div>
+
+    <div class="story">攻めのタイミングで発破をかけてくれたのがあやの
+
+<span class="vague-glow">なんでリスナーが上しか見てないのに
+ライバー側が地に足つけようとしてんだ</span>
+
+喪失した自信を取り戻して我に返れた
+
+「ずっとテンション高いからなんでそんなに元気なのとか絶対聞かないでね」
+
+こんなこと言ってるけど
+配信で病んだことは正直ある
+でも悩んだことは一度もない
+
+<span class="vague-glow">「エンタメで勝つ」</span>
+
+この信念を曲げた事は一度もない
+
+もう面白い配信とかそういう次元じゃない
+配信をショーとして設計してる
+
+そこまでやらないとイケカテに勝てない</div>
+
+    <!-- 4枚目：新デザイン・色んな枠に行ってみて（ここへ美しく挿入！） -->
+    <div class="card">
+        <img src="../images/tweet03.png" alt="MVPツイート画像04">
+    </div>
+
+    <div class="story">エンタメ全振りで構成考えてんのに
+
+頑張った結果、
+
+売上の大半が
+
+「異性として好きです」
+
+だったら
+
+そりゃ
+
+<span class="vague-glow">「俺が磨いてきたのそこじゃねぇんだけどな」</span>
+
+ってなる。
+
+今までは、演出を磨けば磨くほど数字返ってきた。
+
+だから
+
+努力すれば勝てる
+
+という世界観だった。
+
+6月は特に「努力と結果が直結しない局面」に初めてぶち当たった
+
+ここまで積み上げてきた演出設計やノウハウが
+本当に価値あるのかわからなくなった
+
+ライブ配信って残酷で、
+
+努力量と売上が比例しない。
+面白さと売上も比例しない。
+恋愛感情やタイミングや客層も入ってくる.
+
+そんなことは百も承知</div>
+
+    <!-- 3枚目：6月中にはSまで連れていくゾ -->
+    <div class="card">
+        <img src="../images/tweet02.png" alt="MVPツイート画像03">
+    </div>
+
+    <div class="story">正式には、<span class="vague-glow">あやのがここまでずっとついてきてくれてるのが
+何よりも今までやってきたことが無駄じゃなかったっていう証明だよ</span>
+
+僕は、もっと面白くなる
+配信をショーにする
+配信者じゃなくて「演者」「パフォーマー」になる
+
+そんなかいちょの背中を最前線で見守って欲しい
+
+いつか見せる一番上の景色を
+
+Palmuで覇権を握るその日まで
+
+あやの、これからも末永くよろしくね</div>
+
+    <!-- 最後：究極のご褒美ロック画面 -->
+    <div class="end">
+
+        <img src="../images/lockscreen04.png" alt="特典ロック画面グラフィック">
+
+        <div class="end-text">
+            これは記録じゃない。<br><br>
+
+            あやのとの関係の<br>
+            <span class="glow">“到達点の証明”</span><br><br>
+
+            And simultaneously, <br>
+            まだ途中であるという宣言。<br><br>
+
+            Palmuで覇権を握るその日まで。<br>
+            その景色を一緒に見てほしい。
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-mvp">April's Monthly MVP</div>
+        <div class="footer-sub">kaicho</div>
+        <div class="footer-ayano">あやの</div>
+        <div class="footer-sub">April 2026</div>
+    </footer>
+</div>
+
+<canvas id="particles" style="position: fixed; inset: 0; pointer-events: none; z-index: 1;"></canvas>
+
+<script>
+// スクロールフェードイン演出
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+}, {
+  threshold: 0.1
+});
+
+document.querySelectorAll(".story, .card, .end, footer").forEach((el) => {
+  el.classList.add("reveal");
+  observer.observe(el);
+});
+
+// Canvas：永遠のネオンバブル
+const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
+let particles = [];
+
+function resize() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  initParticles();
+}
+
+function initParticles() {
+  particles = [];
+  for (let i = 0; i < 60; i++) {
+    const colors = ["#ff4fd8", "#b967ff", "#ff1493"];
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    
+    particles.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      size: Math.random() * 4 + 2, 
+      speedY: Math.random() * 0.4 + 0.15, 
+      speedX: Math.sin(Math.random() * Math.PI) * 0.2, 
+      opacity: Math.random() * 0.5 + 0.1,
+      fadeSpeed: Math.random() * 0.003 + 0.001, 
+      color: randomColor
+    });
+  }
+}
+
+window.addEventListener("resize", resize);
+resize();
+
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  particles.forEach((p) => {
+    ctx.beginPath();
+    ctx.fillStyle = p.color;
+    ctx.shadowBlur = 10;
+    ctx.shadowColor = p.color;
+    
+    ctx.globalAlpha = p.opacity;
+    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+    ctx.fill();
+
+    p.y -= p.speedY;
+    p.x += p.speedX;
+    p.opacity -= p.fadeSpeed;
+
+    if (p.y < -20 || p.opacity <= 0) {
+      p.y = canvas.height + Math.random() * 30;
+      p.x = Math.random() * canvas.width;
+      p.opacity = Math.random() * 0.5 + 0.2;
+    }
+  });
+  
+  ctx.globalAlpha = 1.0; 
+  requestAnimationFrame(animate);
+}
+
+animate();
+</script>
+
+</body>
+</html>

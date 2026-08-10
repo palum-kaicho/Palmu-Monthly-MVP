@@ -1,0 +1,208 @@
+/* ==========================================================================
+   地雷ファンタジー・儚さバブル特化型 決定版カスタムCSS（フォント超強化版）
+   ========================================================================== */
+body {
+    margin: 0;
+    /* 全体ベースを儚く美しい明朝体（Noto Serif JP）に変更 */
+    font-family: "Noto Serif JP", serif;
+    background: radial-gradient(circle at top, #1a1a3a, #05050a);
+    color: #fff;
+    overflow-x: hidden;
+}
+
+.wrapper {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 50px 18px;
+    position: relative;
+    z-index: 10;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.header h1 {
+    /* タイトル英数字を Montserrat にして洗練さを演出 */
+    font-family: "Montserrat", "Noto Serif JP", serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 2px;
+    text-shadow: 
+        0 0 10px #ff4fd8,
+        0 0 20px #b967ff,
+        0 0 40px rgba(255, 79, 216, 0.5);
+}
+
+/* 原文（極上明朝体 ＆ 絶妙な文字間隔でエモさ限界突破） */
+.story {
+    margin: 32px 0;
+    padding: 26px;
+    background: rgba(12, 8, 20, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 16px;
+    border: 1px solid rgba(185, 103, 255, 0.3);
+    box-shadow: 
+        0 20px 45px rgba(0, 0, 0, 0.8),
+        inset 0 0 25px rgba(185, 103, 255, 0.1);
+    white-space: pre-wrap;
+    line-height: 2.2; /* 行間をほんの少し広げて情緒を出す */
+    font-size: 15px;
+    letter-spacing: 0.08em; /* 文字の詰まり感を無くして高級感を付与 */
+    font-weight: 300; /* 細めのフォントで儚さを強調 */
+}
+
+/* 画像カード */
+.card {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 79, 216, 0.25);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    margin: 32px 0;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.01);
+    border-color: #ff4fd8;
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.8),
+        0 0 30px rgba(255, 79, 216, 0.4);
+}
+
+.card img {
+    width: 100%;
+    display: block;
+}
+
+.highlight {
+    border: 1px solid rgba(255, 79, 216, 0.5);
+    box-shadow: 0 0 25px rgba(255,79,216,0.15);
+}
+
+/* ロック画面 */
+.end {
+    margin-top: 80px;
+    text-align: center;
+}
+
+.end img {
+    width: 100%;
+    border-radius: 18px;
+    border: 1px solid rgba(185, 103, 255, 0.35);
+    box-shadow: 0 0 60px rgba(255, 79, 216, 0.4);
+}
+
+.end-text {
+    margin-top: 35px;
+    font-size: 15px;
+    line-height: 2.4;
+    opacity: 0.95;
+    letter-spacing: 0.08em;
+    font-weight: 300;
+}
+
+.glow {
+    color: #fff;
+    font-weight: 700;
+    font-size: 19px;
+    text-shadow: 
+        0 0 10px #ff4fd8,
+        0 0 20px #b967ff,
+        0 0 30px #ff4fd8;
+}
+
+/* スクロールフェードイン */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1.6s cubic-bezier(0.215, 0.610, 0.355, 1), transform 1.6s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 儚く夜に明滅するネオン強調 */
+.vague-glow {
+    color: #fff;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    text-shadow: 
+        0 0 4px rgba(255, 79, 216, 0.6),
+        0 0 12px rgba(255, 79, 216, 0.3);
+    animation: vaguePulse 4s infinite ease-in-out;
+}
+
+@keyframes vaguePulse {
+    0%, 100% {
+        text-shadow: 
+            0 0 4px rgba(255, 79, 216, 0.6),
+            0 0 12px rgba(255, 79, 216, 0.3);
+        opacity: 0.9;
+    }
+    50% {
+        text-shadow: 
+            0 0 8px #ff4fd8,
+            0 0 20px #b967ff,
+            0 0 30px rgba(255, 79, 216, 0.8);
+        opacity: 1;
+    }
+}
+
+/* 極上ド派手フッターデザイン */
+footer {
+    margin-top: 100px;
+    padding: 60px 0 40px 0;
+    text-align: center;
+    border-top: 1px solid rgba(255, 79, 216, 0.15);
+    position: relative;
+    z-index: 10;
+}
+
+.footer-mvp {
+    font-family: "Montserrat", sans-serif;
+    font-size: 32px;
+    font-weight: 900; /* 超極太にして海外クオリティに */
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    background: linear-gradient(90deg, #ff4fd8, #b967ff, #00f0ff, #ff4fd8);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shineFlow 4s linear infinite;
+    text-shadow: 0 0 20px rgba(255, 79, 216, 0.3);
+}
+
+.footer-ayano {
+    font-size: 38px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #fff;
+    margin: 15px 0;
+    text-shadow: 
+        0 0 10px #ff4fd8,
+        0 0 20px #b967ff,
+        0 0 40px rgba(255, 79, 216, 0.6);
+}
+
+.footer-sub {
+    font-family: "Montserrat", sans-serif;
+    font-size: 13px;
+    color: #a0a0b0;
+    letter-spacing: 3px;
+    opacity: 0.6;
+    margin: 4px 0;
+    font-weight: 400;
+}
+
+@keyframes shineFlow {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
